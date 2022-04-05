@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <main id="app">
+      <input type="text" v-model="newTodo" />
+      <button @click="addTodo">add Todo</button>
+      <ul>
+        <li v-for="(todo, index) in list" key="todo" @click="updateTodoState">
+          {{ todo.todo }} {{todo.done}}
+          <button @click="deleteTodo(index)">Del</button>
+        </li>
+      </ul>
+    </main>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
