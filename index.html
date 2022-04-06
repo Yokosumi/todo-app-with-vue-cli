@@ -5,15 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Todo App</title>
   </head>
   <body>
     <main id="app">
       <input type="text" v-model="newTodo" />
       <button @click="addTodo">add Todo</button>
       <ul>
-        <li v-for="(todo, index) in list" key="todo" @click="updateTodoState">
-          {{ todo.todo }} {{todo.done}}
+        <li
+          v-for="(todo, index) in list"
+          key="todo"
+          @click="todo.done = !todo.done"
+        >
+          <span v-if="todo.done">{{isNotDone}}</span>
+          <span v-else="!todo.done">{{ isDone}}</span>
+          {{ todo.todo }}
           <button @click="deleteTodo(index)">Del</button>
         </li>
       </ul>

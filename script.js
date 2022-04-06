@@ -22,6 +22,8 @@ const app = Vue.createApp({
         },
       ],
       newTodo: "",
+      isDone: "✔️",
+      isNotDone: "❌",
     };
   },
   methods: {

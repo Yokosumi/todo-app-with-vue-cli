@@ -1,0 +1,23 @@
+{
+  "name": "checkpoint-web-apps-with-vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yokosumi/todo-app-with-vue-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yokosumi/todo-app-with-vue-cli/issues"
+  },
+  "homepage": "https://github.com/Yokosumi/todo-app-with-vue-cli#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
