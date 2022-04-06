@@ -13,29 +13,42 @@
     <title>Todo App</title>
   </head>
   <body>
-    <main id="app" class="flexbox">
-      <input type="text" v-model="newTodo" />
-      <button type="button" class="btn btn-success" @click="addTodo">
-        add Todo
-      </button>
-      <ul>
-        <li
-          v-for="(todo, index) in list"
-          key="todo"
-          @click="todo.done = !todo.done"
+    <main id="app">
+      <div class="d-flex justify-content-center">
+        <input
+          type="text"
+          v-model="newTodo"
+          class="col-lg-2 custom-margin-bottom"
+        />
+        <button
+          type="button"
+          class="btn btn-success custom-margin-left"
+          @click="addTodo"
         >
-          <span v-if="todo.done">{{isNotDone}}</span>
-          <span v-else="!todo.done">{{ isDone}}</span>
-          {{ todo.todo }}
-          <button
-            type="button"
-            class="btn btn-danger"
-            @click="deleteTodo(index)"
+          add Todo
+        </button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <ul>
+          <li
+            class="custom-margin-bottom"
+            v-for="(todo, index) in list"
+            key="todo"
+            @click="todo.done = !todo.done"
           >
-            Del
-          </button>
-        </li>
-      </ul>
+            <span v-if="!todo.done">{{isNotDone}}</span>
+            <span v-else="todo.done">{{ isDone}}</span>
+            {{ todo.todo }}
+            <button
+              type="button"
+              class="btn btn-danger custom-margin-left"
+              @click="deleteTodo(index)"
+            >
+              Delete
+            </button>
+          </li>
+        </ul>
+      </div>
     </main>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="script.js"></script>
